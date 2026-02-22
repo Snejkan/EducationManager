@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="EducationManager.Application/EducationManager.Application.csproj" />
+  <Project Path="EducationManager.Domain/EducationManager.Domain.csproj" />
+  <Project Path="EducationManager.Infrastructure/EducationManager.Infrastructure.csproj" />
+  <Project Path="EducationManager.Presentation/EducationManager.Presentation.csproj" Id="d9468d8e-b935-4a97-b01e-8122f41090a4" />
+  <Project Path="EducationManager.Test/EducationManager.Test.csproj" Id="5692882d-1a98-4175-b04b-3bc1c11626fa" />
+</Solution>
