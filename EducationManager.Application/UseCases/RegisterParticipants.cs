@@ -1,10 +1,9 @@
-﻿using EducationApp.Application.Interfaces;
-using EducationManager.Application.Interfaces;
+﻿using EducationManager.Application.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace EducationApp.Application.UseCases;
+namespace EducationManager.Application.UseCases;
 
 public class RegisterParticipant
 {

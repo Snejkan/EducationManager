@@ -10,9 +10,9 @@ public class Registration
     public Guid ParticipantId { get; private set; }
     public Guid CourseSessionId { get; private set; }
 
-    public Registration(Guid participantId, Guid sessionId)
+    public Registration(Guid participantId, Guid courseSessionId)
     {
         ParticipantId = participantId;
-        CourseSessionId = sessionId;
+        CourseSessionId = courseSessionId;
     }
 }
