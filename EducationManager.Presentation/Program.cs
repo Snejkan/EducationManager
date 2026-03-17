@@ -26,8 +26,13 @@ builder.Services.AddCors(options =>
     });
 });
 
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 var app = builder.Build();
 
+app.UseSwagger();
+app.UseSwaggerUI();
 app.UseCors();
 
 
@@ -48,7 +53,7 @@ using (var scope = app.Services.CreateScope())
 
     if (!db.Courses.Any())
     {
-        var course = new Course("Programming Basics");
+        var course = new Course("Programming");
         db.Courses.Add(course);
 
         var session = new CourseSession(course.Id, 10);
