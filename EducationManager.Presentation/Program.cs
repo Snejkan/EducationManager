@@ -32,7 +32,13 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 app.UseSwagger();
-app.UseSwaggerUI();
+
+app.UseSwaggerUI(options =>
+{
+    options.RoutePrefix = string.Empty;
+    options.SwaggerEndpoint("/swagger/v1/swagger.json", "EducationManager API v1");
+});
+
 app.UseCors();
 
 
