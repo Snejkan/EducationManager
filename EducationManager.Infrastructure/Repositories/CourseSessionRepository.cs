@@ -2,9 +2,6 @@
 using EducationManager.Domain.Entities;
 using EducationManager.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace EducationManager.Infrastructure.Repositories;
 
@@ -22,6 +19,11 @@ public class CourseSessionRepository : ICourseSessionRepository
         return await _context.CourseSessions
             .Include(x => x.Registrations)
             .FirstOrDefaultAsync(x => x.Id == id);
+    }
+
+    public async Task AddRegistrationAsync(Registration registration)
+    {
+        await _context.Registrations.AddAsync(registration);
     }
 
     public async Task SaveChangesAsync()

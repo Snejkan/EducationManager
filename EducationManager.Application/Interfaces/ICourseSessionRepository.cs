@@ -8,6 +8,6 @@ namespace EducationManager.Application.Interfaces;
 public interface ICourseSessionRepository
 {
     Task<CourseSession?> GetByIdAsync(Guid id);
-
+    Task AddRegistrationAsync(Registration registration);
     Task SaveChangesAsync();
 }

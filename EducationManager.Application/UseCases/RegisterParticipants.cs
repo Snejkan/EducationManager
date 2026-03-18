@@ -1,7 +1,5 @@
 ﻿using EducationManager.Application.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using EducationManager.Domain.Entities;
 
 namespace EducationManager.Application.UseCases;
 
@@ -19,12 +17,14 @@ public class RegisterParticipant
         var session = await _repository.GetByIdAsync(sessionId);
 
         if (session == null)
-        {
             throw new Exception("Session not found");
-        }
 
-        session.Register(participantId);
+        if (session.Registrations.Count >= session.MaxParticipants)
+            throw new InvalidOperationException("Course is full");
 
+        var registration = new Registration(participantId, sessionId);
+
+        await _repository.AddRegistrationAsync(registration);
         await _repository.SaveChangesAsync();
     }
 }
